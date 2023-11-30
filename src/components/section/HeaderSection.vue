@@ -7,7 +7,7 @@
         </a>
         <nav class="nav">
             <ul>
-                <li><a href="#">홈</a></li>
+                <li><a href="/">홈</a></li>
                 <li><a href="#">영화TOP10</a></li>
                 <li><a href="#">코미디영화 TOP10</a></li>
             </ul>
@@ -24,6 +24,7 @@
     position: fixed;
     top: 0;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
 
     .logo {
         width: 60px;

@@ -1,0 +1,3 @@
+<template>
+    DetailCredits
+</template>

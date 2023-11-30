@@ -47,9 +47,10 @@
                 </nav>
             </div>
             <div class="footer3">
-                <h2>Contact noew</h2>
-                <input type="text" name="" id="" placeholder="Your e-mail">
-                <button>CONTACT</button>
+                <h2>Contact now</h2>
+                <label for="footer__mail" class="blind"></label>
+                <input type="text" name="footer__mail" id="footer__mail" placeholder="Your E-mail">
+                <button type="submit">CONTACT</button>
             </div>
             <div class="footerB">
                 <div class="footerB__left">
@@ -123,6 +124,28 @@
         .footer3 {
             width: 20%;
             height: 80%;
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+
+            input {
+                background-color: transparent;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+                margin-bottom: 1rem;
+                color: #fff;
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+
+            button {
+                background-color: #F80147;
+                color: #fff;
+                padding: 5px 20px;
+                cursor: pointer;
+            }
         }
 
         .footerB {
@@ -149,14 +172,6 @@
                                 padding: 0 10px;
                             }
                         }
-                    }
-                }
-            }
-
-            .footerB__right {
-                a {
-                    svg {
-                        fill: ;
                     }
                 }
             }

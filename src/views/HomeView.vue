@@ -63,14 +63,13 @@ onMounted(async () => {
   <HeaderSection />
   <main id="main" role="main">
     <div class="movie__slider">
-      <div class="slider__inner container1280"
-        style="background-image: url(https://image.tmdb.org/t/p/w500/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg); background-size: cover; background-repeat: no-repeat; backdrop-filter: blur(10px);">
-        <div class="img play__icon">
-          <a href="#">
+        <div class="slider__inner container1280">
+            <div class="img play__icon">
+              <a href="#">
             <img src="https://image.tmdb.org/t/p/w500/7M2pc9OboapgtoBbkU49Aim7O5B.jpg">
           </a>
-        </div>
-        <div class="text">
+            </div>
+            <div class="text">
           <div class="title">트롤 밴드 투게더</div>
           <div class="info">
             <div class="date">2023-10-12</div>
@@ -91,7 +90,8 @@ onMounted(async () => {
             <img src="https://image.tmdb.org/t/p/w500/6u95ZNLrADSlK7CVkgEvC0jLIJh.jpg" alt="Amy Schumer">
           </div>
         </div>
-      </div>
+        </div>
+        <div class="slider__bg" style="background-image: url(https://image.tmdb.org/t/p/w500/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg); background-size: cover; background-repeat: no-repeat;"></div>
     </div>
     <div class="container">
       <div class="movie__inner container1280">
@@ -180,72 +180,87 @@ import FooterSection from '@/components/section/FooterSection.vue'
 
 <style lang="scss">
 .movie__slider {
-  width: 100%;
-  height: 90vh;
-
-  .slider__inner {
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 90vh;
+    position: relative;
 
-    .img {
-      width: 20vw;
-
-      img {
+    .slider__inner {
         width: 100%;
-        vertical-align: top;
-      }
-    }
-
-    .text {
-      margin-left: 2vw;
-
-      .title {
-        font-size: 3rem;
-        font-weight: 700;
-      }
-
-      .info {
+        height: 100%;
         display: flex;
-        font-size: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
 
-        .date {
-          padding-right: 1rem;
-          border-right: 1px solid var(--white);
+        .img {
+            width: 20vw;
+
+            img {
+                width: 100%;
+                vertical-align: top;
+            }
         }
 
-        .average {
-          padding-left: 1rem;
+        .text {
+            margin-left: 2vw;
+
+            .title {
+                font-size: 3rem;
+                font-weight: 700;
+            }
+
+            .info {
+                display: flex;
+                font-size: 0.8rem;
+
+                .date {
+                    padding-right: 1rem;
+                    border-right: 1px solid var(--white);
+                }
+
+                .average {
+                    padding-left: 1rem;
+                }
+            }
+
+            .desc {
+                margin-top: 1rem;
+                width: 40vw;
+                white-space: pre-line;
+            }
         }
-      }
 
-      .desc {
-        margin-top: 1rem;
-        width: 40vw;
-        white-space: pre-line;
+        .credit {
+            display: flex;
 
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-      }
+            img {
+                margin-top: 1rem;
+                margin-right: 1vw;
+                width: 5vw;
+                vertical-align: top;
+            }
+
+        }
     }
-
-    .credit {
-      display: flex;
-
-      img {
-        margin-top: 1rem;
-        margin-right: 1vw;
-        width: 5vw;
-        vertical-align: top;
-      }
+    .slider__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(5px);
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
     }
-  }
-
 }
 
 .movie__inner {

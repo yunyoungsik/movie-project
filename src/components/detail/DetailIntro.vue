@@ -1,12 +1,7 @@
 <template>
     <div class="movie__slider">
-        <div class="slider__inner container1280" :style="{
-            'background-image': 'url(' + 'https://image.tmdb.org/t/p/w500/' + movieBasic.backdrop_path + ')',
-            'background-size': 'cover',
-            'background-repeat': 'no-repeat',
-            'backdrop-filter': 'blur(30px)'
-        }">
-            <div class="img play__icon">
+        <div class="slider__inner container1280">
+            <div class="img">
                 <img :src="'https://image.tmdb.org/t/p/w500' + movieBasic.poster_path" :alt="movieBasic.title">
             </div>
             <div class="text">
@@ -19,18 +14,25 @@
                     {{ movieBasic.overview }}
                 </div>
                 <div class="credit">
-                    <div v-for="(crew, index) in movieCredits.crew.slice(0, 5)" :key="index">
-                        <img :src="'https://image.tmdb.org/t/p/w500' + crew.profile_path" :alt="crew.name">
+                    <div v-for="(cast, index) in movieCredits.cast.slice(0, 5)" :key="index">
+                        <img :src="'https://image.tmdb.org/t/p/w500' + cast.profile_path" :alt="cast.name">
                     </div>
                 </div>
             </div>
         </div>
+        <div class="slider__bg" :style="{
+            'background-image': 'url(' + 'https://image.tmdb.org/t/p/w500/' + movieBasic.backdrop_path + ')',
+            'background-size': 'cover',
+            'background-repeat': 'no-repeat',
+            'backdrop-filter': 'blur(30px)'
+        }"></div>
     </div>
 </template>
 <style lang="scss">
 .movie__slider {
     width: 100%;
     height: 90vh;
+    position: relative;
 
     .slider__inner {
         width: 100%;
@@ -38,6 +40,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 2;
 
         .img {
             width: 20vw;
@@ -74,12 +77,6 @@
                 margin-top: 1rem;
                 width: 40vw;
                 white-space: pre-line;
-
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
             }
         }
 
@@ -95,7 +92,25 @@
 
         }
     }
-
+    .slider__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(5px);
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+    }
 }
 </style>
 <script>

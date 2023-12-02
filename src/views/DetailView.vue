@@ -54,11 +54,11 @@ export default {
 
                 const resmovieImg = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/images?api_key=${apiKey}`);
                 movieImg.value = resmovieImg.data;
-                console.log(resmovieImg);
+                // console.log(resmovieImg);
 
                 const resmovieCredits = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`);
                 movieCredits.value = resmovieCredits.data;
-                // console.log(resmovieCredits);
+                console.log(resmovieCredits);
 
             } catch (err) {
                 console.log(err)

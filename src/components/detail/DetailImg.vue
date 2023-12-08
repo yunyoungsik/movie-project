@@ -20,16 +20,28 @@
 .movie__img {
     width: 100%;
     padding: 2vh 0;
+
     .img__inner {
-        h2{
+        h2 {
             font-size: 2rem;
         }
+
         .imgWrap {
             width: 100%;
             display: flex;
+
+            @media(max-width: 1000px) {
+                display: block;
+            }
+
             div {
                 width: 100%;
-                .img{
+
+                @media(max-width:1000px) {
+                    margin-bottom: 10px;
+                }
+
+                .img {
                     padding-bottom: 56.25%;
                 }
             }

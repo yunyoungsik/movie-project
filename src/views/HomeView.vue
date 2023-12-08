@@ -63,13 +63,13 @@ onMounted(async () => {
   <HeaderSection />
   <main id="main" role="main">
     <div class="movie__slider">
-        <div class="slider__inner container1280">
-            <div class="img play__icon">
-              <a href="#">
-            <img src="https://image.tmdb.org/t/p/w500/7M2pc9OboapgtoBbkU49Aim7O5B.jpg">
-          </a>
-            </div>
-            <div class="text">
+      <div class="slider__inner container1280">
+        <div class="img play__icon">
+
+          <img src="https://image.tmdb.org/t/p/w500/7M2pc9OboapgtoBbkU49Aim7O5B.jpg">
+
+        </div>
+        <div class="text">
           <div class="title">트롤 밴드 투게더</div>
           <div class="info">
             <div class="date">2023-10-12</div>
@@ -90,8 +90,10 @@ onMounted(async () => {
             <img src="https://image.tmdb.org/t/p/w500/6u95ZNLrADSlK7CVkgEvC0jLIJh.jpg" alt="Amy Schumer">
           </div>
         </div>
-        </div>
-        <div class="slider__bg" style="background-image: url(https://image.tmdb.org/t/p/w500/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg); background-size: cover; background-repeat: no-repeat;"></div>
+      </div>
+      <div class="slider__bg"
+        style="background-image: url(https://image.tmdb.org/t/p/w500/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg); background-size: cover; background-repeat: no-repeat;">
+      </div>
     </div>
     <div class="container">
       <div class="movie__inner container1280">
@@ -180,87 +182,113 @@ import FooterSection from '@/components/section/FooterSection.vue'
 
 <style lang="scss">
 .movie__slider {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+
+  .slider__inner {
     width: 100%;
-    height: 90vh;
-    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 
-    .slider__inner {
+    @media(max-width: 600px) {
+      margin-top: 120px;
+      flex-direction: column;
+    }
+
+    .img {
+      width: 20vw;
+      min-width: 275px;
+
+      img {
         width: 100%;
-        height: 100%;
+        vertical-align: top;
+      }
+    }
+
+    .text {
+      margin-left: 2vw;
+
+      @media(max-width: 600px) {
+        margin-left: 0vw !important;
+        width: 90%;
+      }
+
+      .title {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .info {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
+        font-size: 0.8rem;
 
-        .img {
-            width: 20vw;
-
-            img {
-                width: 100%;
-                vertical-align: top;
-            }
+        .date {
+          padding-right: 1rem;
+          border-right: 1px solid var(--white);
         }
 
-        .text {
-            margin-left: 2vw;
-
-            .title {
-                font-size: 3rem;
-                font-weight: 700;
-            }
-
-            .info {
-                display: flex;
-                font-size: 0.8rem;
-
-                .date {
-                    padding-right: 1rem;
-                    border-right: 1px solid var(--white);
-                }
-
-                .average {
-                    padding-left: 1rem;
-                }
-            }
-
-            .desc {
-                margin-top: 1rem;
-                width: 40vw;
-                white-space: pre-line;
-            }
+        .average {
+          padding-left: 1rem;
         }
+      }
 
-        .credit {
-            display: flex;
+      .desc {
+        margin-top: 1rem;
+        width: 40vw;
+        white-space: pre-line;
 
-            img {
-                margin-top: 1rem;
-                margin-right: 1vw;
-                width: 5vw;
-                vertical-align: top;
-            }
-
+        @media(max-width: 600px) {
+          width: 100% !important;
         }
+      }
     }
-    .slider__bg {
-        position: absolute;
-        top: 0;
-        left: 0;
+
+    .credit {
+      display: flex;
+
+      @media(max-width: 600px) {
         width: 100%;
-        height: 100%;
-        z-index: -1;
-        filter: blur(5px);
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 1;
+        justify-content: space-between;
+      }
+
+      img {
+        margin-top: 1rem;
+        margin-right: 1vw;
+        width: 5vw;
+        vertical-align: top;
+
+        @media(max-width: 600px) {
+          width: 19% !important;
         }
+      }
+
     }
+  }
+
+  .slider__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(5px);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+  }
 }
 
 .movie__inner {
@@ -338,6 +366,14 @@ import FooterSection from '@/components/section/FooterSection.vue'
     .movie {
       width: 24%;
       margin-bottom: 2vh;
+
+      @media(max-width: 600px) {
+        width: 49%;
+      }
+
+      @media(max-width: 400px) {
+        width: 100%;
+      }
     }
   }
 }

@@ -83,15 +83,29 @@
         .credit {
             display: flex;
 
-            img {
-                margin-top: 1rem;
-                margin-right: 1vw;
-                width: 5vw;
-                vertical-align: top;
+            @media(max-width: 600px) {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            >div {
+                width: 19%;
+
+                img {
+                    margin-top: 1rem;
+                    margin-right: 1vw;
+                    width: 5vw;
+                    vertical-align: top;
+
+                    @media(max-width: 600px) {
+                        width: 100% !important;
+                    }
+                }
             }
 
         }
     }
+
     .slider__bg {
         position: absolute;
         top: 0;
@@ -100,6 +114,7 @@
         height: 100%;
         z-index: -1;
         filter: blur(5px);
+
         &::after {
             content: '';
             position: absolute;
@@ -107,7 +122,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
     }

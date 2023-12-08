@@ -125,6 +125,7 @@
             width: 20%;
             height: 80%;
 
+
             h2 {
                 margin-bottom: 1rem;
             }
@@ -176,6 +177,18 @@
                 }
             }
         }
+    }
+}
+
+@media(max-width:700px) {
+    .footer__inner {
+        height: 100px !important;
+    }
+
+    .footer1,
+    .footer2,
+    .footer3 {
+        display: none;
     }
 }
 </style>

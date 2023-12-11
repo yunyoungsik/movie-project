@@ -8,8 +8,6 @@
         <nav class="nav">
             <ul>
                 <li><a href="/">홈</a></li>
-                <li><a href="#">영화TOP10</a></li>
-                <li><a href="#">코미디영화 TOP10</a></li>
             </ul>
         </nav>
     </header>

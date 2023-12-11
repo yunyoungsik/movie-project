@@ -23,7 +23,6 @@
                 분
             </div>
         </div>
-
     </div>
 </template>
 <style lang="scss">

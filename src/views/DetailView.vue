@@ -2,6 +2,7 @@
     <HeaderSection />
     <DetailIntro v-if="movieBasic && movieCredits" :movieBasic="movieBasic" :movieCredits="movieCredits" />
     <DetailInfo v-if="movieInfo" :movieInfo="movieInfo" />
+    <DetailVideos v-if="movieVideos" :movieVideos="movieVideos" />
     <DetailImg v-if="movieImg" :movieImg="movieImg" />
     <DetailCredits v-if="movieCredits" :movieCredits="movieCredits" />
     <FooterSection />
@@ -18,6 +19,7 @@ import DetailIntro from "../components/detail/DetailIntro.vue";
 import DetailInfo from "../components/detail/DetailInfo.vue";
 import DetailImg from "../components/detail/DetailImg.vue";
 import DetailCredits from "../components/detail/DetailCredits.vue";
+import DetailVideos from "../components/detail/DetailVideos.vue";
 
 export default {
     name: "MovieDetailPage",
@@ -26,6 +28,7 @@ export default {
         FooterSection,
         DetailIntro,
         DetailInfo,
+        DetailVideos,
         DetailImg,
         DetailCredits,
     },
@@ -35,6 +38,7 @@ export default {
         const movieInfo = ref(null);
         const movieImg = ref(null);
         const movieCredits = ref(null);
+        const movieVideos = ref(null);
 
         const route = useRoute();
 
@@ -58,14 +62,18 @@ export default {
 
                 const resmovieCredits = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`);
                 movieCredits.value = resmovieCredits.data;
-                console.log(resmovieCredits);
+                // console.log(resmovieCredits);
+
+                const resmovieVideos = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`);
+                movieVideos.value = resmovieVideos.data;
+                console.log(resmovieVideos);
 
             } catch (err) {
                 console.log(err)
             }
         });
 
-        return { movieBasic, movieInfo, movieImg, movieCredits }
+        return { movieBasic, movieInfo, movieImg, movieCredits, movieVideos }
     }
 }
 </script>

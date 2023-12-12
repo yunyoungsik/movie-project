@@ -42,7 +42,7 @@ Done. Now run:
 1. Template: Vue 템플릿에서는 각 섹션을 컴포넌트로 분리해서 사용했습니다. HeaderSection, DetailIntro, DetailInfo, DetailImg, DetailCredits, FooterSection 등의 컴포넌트를 사용해서 영화 정보를 보여줍니다.
 2. Script (Vue Composition API): setup() 함수를 사용하여 데이터와 API 호출을 관리합니다. ref를 사용하여 movieBasic, movieInfo, movieImg, movieCredits, movieVideos 등을 초기화하고, useRoute를 이용하여 현재 라우트 정보를 가져옵니다.
 3. API 호출: onMounted 훅을 사용하여 컴포넌트가 마운트된 후에 API를 호출합니다. 각 API 호출은 Axios를 사용하고, 영화 ID를 사용하여 영화에 대한 정보를 가져옵니다.
-4. API Key 보안: import.meta.env.VITE_API_KEY를 사용하여 환경 변수를 통해 API 키를 가져옵니다. 이는 .env 파일에 저장된 변수를 활용하여 API 키를 보호합니다.
+4. API Key 보안: import.meta.env.VITE_API_KEY를 사용하여 환경 변수를 통해 API 키를 가져옵니다. .env 파일에 저장된 변수를 활용하여 API 키를 보호합니다.
 5. 에러 핸들링: try...catch를 사용하여 API 호출 시 발생할 수 있는 에러를 처리합니다.
 
 ## 트러블슈팅

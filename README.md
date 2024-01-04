@@ -78,9 +78,3 @@ movieBasic.value = resMovieBasic.data; // 나머지 변수들도 동일하게 .v
     <img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white">
     <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white">
   </div>
-  <p><strong>Communication</strong></p>
-  <div>
-    <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=Slack&logoColor=white">
-    <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white">
-  </div>
-</div>

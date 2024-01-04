@@ -1,4 +1,5 @@
 # MOVIE PROJECT
+<img width="100%" src="https://github.com/yunyoungsik/movie-project/blob/main/src/assets/img/thumbnail.jpg?raw=true" />
 TMDB API를 활용하여 제작된 Vue 기반의 영화 정보 사이트입니다.<br />
 이 사이트를 통해 최신 영화 정보를 확인할 수 있으며, 사용자는 특정 영화를 선택하면 해당 영화에 대한 상세 정보를 볼 수 있습니다.<br />
 영화의 포스터, 제목, 개봉일, 평점 등을 확인할 수 있고, 영화의 줄거리를 읽을 수도 있을 뿐만 아니라, 영화에 출연하는 배우들의 프로필 사진을 살펴볼 수 있습니다.<br />

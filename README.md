@@ -63,3 +63,24 @@ const resMovieBasic = await axios.get(`https://api.themoviedb.org/3/movie/${movi
 movieBasic.value = resMovieBasic.data; // 나머지 변수들도 동일하게 .value 대신 객체 자체를 변경
 ```
  ref가 객체를 반환하도록 설정하고, API 응답을 받은 후 .value가 아닌 객체를 직접 변경하여 ref 값을 업데이트하는 방식입니다. 이렇게 하면 .value를 사용하지 않고도 ref의 값을 변경할 수 있습니다.
+
+ ## 스택
+<div disflay="flex" flex-direction:column; align-items:flex-start;>
+  <p><strong>Environment</strong></p>
+  <div>
+    <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=flat-square&logo=VisualStudioCode&logoColor=white">
+    <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"> 
+    <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white">
+  </div>
+  <p><strong>Development</strong></p>
+  <div>
+    <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"> 
+    <img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white">
+  </div>
+  <p><strong>Communication</strong></p>
+  <div>
+    <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=Slack&logoColor=white">
+    <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white">
+  </div>
+</div>
